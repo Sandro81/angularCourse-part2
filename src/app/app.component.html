@@ -12,13 +12,20 @@
 
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/" >Home</a>
+          <a class="nav-link"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
+             routerLink="/" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/servers" >Servers</a>
+          <a class="nav-link"
+             routerLinkActive="active"
+             routerLink="/servers" >Servers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']" >Users</a>
+          <a class="nav-link"
+             routerLinkActive="active"
+             [routerLink]="['/users']" >Users</a>
         </li>
       </ul>
     </div>
@@ -88,8 +95,9 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 128 -> Styling Active Router Links</h5>
-          <p class="card-text"> - </p>
+          <p class="card-text"> To be able to active and deactive the path we use the property <b>routerLinkActive=".class"</b> </p>
           <p class="card-text"> <code>routerLinkActive="active" </code></p>
+          <p class="card-text">For the home path or '/' we have to add the parameter -> <code>[routerLinkActiveOptions]="&#123;exact: true}" </code> that means Angular has to check the exact string of the path and compare it</p>
         </div>
       </div>
 
