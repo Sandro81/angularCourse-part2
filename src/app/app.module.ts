@@ -3,10 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './section11/l124/home/home.component';
+import { ServersComponent } from './section11/l124/servers/servers.component';
+import { EditServerComponent } from './section11/l124/servers/edit-server/edit-server.component';
+import { ServerComponent } from './section11/l124/servers/server/server.component';
+import { UsersComponent } from './section11/l124/users/users.component';
+import { UserComponent } from './section11/l124/users/user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ServersComponent,
+    EditServerComponent,
+    ServerComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
