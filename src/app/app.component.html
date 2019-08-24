@@ -11,13 +11,13 @@
     <div class="col">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Servers</a>
+          <a class="nav-link" routerLink="/servers">Servers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Users</a>
+          <a class="nav-link" [routerLink]="['/users']">Users</a>
         </li>
       </ul>
     </div>
@@ -57,5 +57,13 @@
     <p class="card-text"> -> HTML file </p>
     <p class="card-text"> With the "router-outlet" simply marks the place in our document where we want the Angular router to load the component of the currently selected route.</p>
     <code>&#60;router-outlet>&#60;/router-outlet></code>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Lesson 126 -> Navigating with Router Links</h5>
+    <p class="card-text"> Instead of use the href="" parameter, we will use the <b>routerLink=""</b> -> routerLink, like this simply is able to parse a string</p>
+    <code class="card-text">&#60;a class="nav-link" routerLink="/servers">Servers&#60;/a></code>
   </div>
 </div>
