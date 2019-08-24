@@ -9,6 +9,8 @@ import { EditServerComponent } from './section11/l124/servers/edit-server/edit-s
 import { ServerComponent } from './section11/l124/servers/server/server.component';
 import { UsersComponent } from './section11/l124/users/users.component';
 import { UserComponent } from './section11/l124/users/user/user.component';
+import {FormsModule} from '@angular/forms';
+import {ServersService} from './section11/l124/servers/servers.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { UserComponent } from './section11/l124/users/user/user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
