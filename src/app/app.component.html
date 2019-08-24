@@ -30,40 +30,45 @@
 </div>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 125 -> Setting up and Loading Routes</h5>
+          <p class="card-text">These routes are responsible for our whole app. Everywhere in our application, if we enter /users, we want to load the users component as our main page let's say. So since this is really a core part of our app, where should we register it? Well, the <b>app module</b> sounds like a good place because here is where we configure our app, where we add all these components and so on, so this might be a good place to also inform Angular about the routes our application has and it is. So here above this @NgModule decorator here, I will add a new constant and I will name it appRoutes because it should hold all the routes of my application.</p>
+          <p class="card-text">app.modules.ts</p>
+          <code class="card-text">const appRoutes: Routes = [<br>
+            // first is the path, second is the action<br>
+            <b>&#123; path: '', component: HomeComponent } </b><br>
+            <b>&#123; path: 'users', component: UserComponent } </b><br>
+            <b>&#123; path: 'servers', component: ServerComponent } </b><br>
+            ];</code><br>
+          <p class="card-text">It is also important to import the 'RouterModule' adding the forRoot method</p>
+          <code class="card-text">
+            imports: [<br>
+            BrowserModule,<br>
+            AppRoutingModule,<br>
+            FormsModule,<br>
+            <b>RouterModule.forRoot(appRoutes)</b><br>
+            ],<br>
+          </code>
+          <p class="card-text">So forRoot will now receive our appRoutes constant here as an argument and with that, our routes are now registered in our Angular app on this RouterModule which gives us this routing functionality and now Angular knows our routes.
+          </p>
 
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Lesson 125 -> Setting up and Loading Routes</h5>
-    <p class="card-text">These routes are responsible for our whole app. Everywhere in our application, if we enter /users, we want to load the users component as our main page let's say. So since this is really a core part of our app, where should we register it? Well, the <b>app module</b> sounds like a good place because here is where we configure our app, where we add all these components and so on, so this might be a good place to also inform Angular about the routes our application has and it is. So here above this @NgModule decorator here, I will add a new constant and I will name it appRoutes because it should hold all the routes of my application.</p>
-    <p class="card-text">app.modules.ts</p>
-    <code class="card-text">const appRoutes: Routes = [<br>
-      // first is the path, second is the action<br>
-      <b>&#123; path: '', component: HomeComponent } </b><br>
-      <b>&#123; path: 'users', component: UserComponent } </b><br>
-      <b>&#123; path: 'servers', component: ServerComponent } </b><br>
-      ];</code><br>
-    <p class="card-text">It is also important to import the 'RouterModule' adding the forRoot method</p>
-    <code class="card-text">
-      imports: [<br>
-      BrowserModule,<br>
-      AppRoutingModule,<br>
-      FormsModule,<br>
-      <b>RouterModule.forRoot(appRoutes)</b><br>
-      ],<br>
-    </code>
-    <p class="card-text">So forRoot will now receive our appRoutes constant here as an argument and with that, our routes are now registered in our Angular app on this RouterModule which gives us this routing functionality and now Angular knows our routes.
-    </p>
-
-    <p class="card-text"> -> HTML file </p>
-    <p class="card-text"> With the "router-outlet" simply marks the place in our document where we want the Angular router to load the component of the currently selected route.</p>
-    <code>&#60;router-outlet>&#60;/router-outlet></code>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Lesson 126 -> Navigating with Router Links</h5>
-    <p class="card-text"> Instead of use the href="" parameter, we will use the <b>routerLink=""</b> -> routerLink, like this simply is able to parse a string</p>
-    <code class="card-text">&#60;a class="nav-link" routerLink="/servers">Servers&#60;/a></code>
+          <p class="card-text"> -> HTML file </p>
+          <p class="card-text"> With the "router-outlet" simply marks the place in our document where we want the Angular router to load the component of the currently selected route.</p>
+          <code>&#60;router-outlet>&#60;/router-outlet></code>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 126 -> Navigating with Router Links</h5>
+          <p class="card-text"> Instead of use the href="" parameter, we will use the <b>routerLink=""</b> -> routerLink, like this simply is able to parse a string</p>
+          <code class="card-text">&#60;a class="nav-link" routerLink="/servers">Servers&#60;/a></code>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
