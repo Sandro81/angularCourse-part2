@@ -20,11 +20,13 @@
         <li class="nav-item">
           <a class="nav-link"
              routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
              routerLink="/servers" >Servers</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"
              routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
              [routerLink]="['/users']" >Users</a>
         </li>
       </ul>
@@ -115,6 +117,27 @@
             }<br></code></p>
         </div>
       </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 130 -> Using Relative Paths in Programmatic Navigation</h5>
+          <p class="card-text">To be able to route the user to a relative path using an event, we need an extra Service: </p>
+          <p class="card-text"> <code>constructor(private serversService: ServersService,<br>
+            private router: Router,<br>
+            <b>private route: ActivatedRoute</b>) &#123; }</code>
+          </p>
+
+          <p class="card-text"> The navigate method needs an extra parameter that can identify the relative path where attach the new path:<br>
+            <code>routerLink="/servers" <br>
+          onReload() &#123;<br>
+          this.router.navigate(['servers'], &#123;relativeTo: this.route});<br>
+          }</code>
+          </p>
+        </div>
+      </div>
+
 
 
       <br>
