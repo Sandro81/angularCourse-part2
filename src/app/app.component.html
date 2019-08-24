@@ -45,8 +45,13 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Lesson 125 -> Setting up and Loading Routes</h5>
-    <p class="card-text"></p>
+    <p class="card-text">These routes are responsible for our whole app. Everywhere in our application, if we enter /users, we want to load the users component as our main page let's say. So since this is really a core part of our app, where should we register it? Well, the <b>app module</b> sounds like a good place because here is where we configure our app, where we add all these components and so on, so this might be a good place to also inform Angular about the routes our application has and it is. So here above this @NgModule decorator here, I will add a new constant and I will name it appRoutes because it should hold all the routes of my application.</p>
+    <p class="card-text">app.modules.ts</p>
+    <code>const appRoutes: Routes = [<br>
+      // first is the path, second is the action<br>
+        <b>&#123; path: '', component: HomeComponent } </b><br>
+        <b>&#123; path: 'users', component: UserComponent } </b><br>
+        <b>&#123; path: 'servers', component: ServerComponent } </b><br>
+      ];</code>
   </div>
 </div>
-
-
