@@ -9,15 +9,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <ul class="nav">
+
+      <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/">Home</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/servers">Servers</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/servers" >Servers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/users']">Users</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']" >Users</a>
         </li>
       </ul>
     </div>
@@ -69,6 +70,39 @@
           <code class="card-text">&#60;a class="nav-link" routerLink="/servers">Servers&#60;/a></code>
         </div>
       </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 127 -> Understanding Navigation Paths</h5>
+          <p class="card-text"> The difference between a path with the '/' and without is: </p>
+          <p class="card-text"> <code>routerLink="/servers" </code> Absolute path</p>
+          <p class="card-text"> <code>routerLink="servers" </code> Relative path</p>
+          <p class="card-text"> <code>routerLink="../servers" </code> Back One level and path</p>
+        </div>
+      </div>
+
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 128 -> Styling Active Router Links</h5>
+          <p class="card-text"> - </p>
+          <p class="card-text"> <code>routerLinkActive="active" </code></p>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson xxx -> </h5>
+          <p class="card-text"> - </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
