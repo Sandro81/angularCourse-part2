@@ -7,39 +7,28 @@
 </div>
 
 <div class="container">
-
-
-
-
   <div class="row">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Servers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Users</a>
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <app-home></app-home>
+    <div class="col">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Users</a>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <app-users></app-users>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <app-servers></app-servers>
+    <div class="col">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
 
 
 <div class="card">
@@ -49,18 +38,24 @@
     <p class="card-text">app.modules.ts</p>
     <code class="card-text">const appRoutes: Routes = [<br>
       // first is the path, second is the action<br>
-        <b>&#123; path: '', component: HomeComponent } </b><br>
-        <b>&#123; path: 'users', component: UserComponent } </b><br>
-        <b>&#123; path: 'servers', component: ServerComponent } </b><br>
+      <b>&#123; path: '', component: HomeComponent } </b><br>
+      <b>&#123; path: 'users', component: UserComponent } </b><br>
+      <b>&#123; path: 'servers', component: ServerComponent } </b><br>
       ];</code><br>
-    <p class="card-text">It is also important to import the 'RouterModule'</p>
+    <p class="card-text">It is also important to import the 'RouterModule' adding the forRoot method</p>
     <code class="card-text">
       imports: [<br>
       BrowserModule,<br>
       AppRoutingModule,<br>
       FormsModule,<br>
-      <b>RouterModule</b><br>
+      <b>RouterModule.forRoot(appRoutes)</b><br>
       ],<br>
     </code>
+    <p class="card-text">So forRoot will now receive our appRoutes constant here as an argument and with that, our routes are now registered in our Angular app on this RouterModule which gives us this routing functionality and now Angular knows our routes.
+    </p>
+
+    <p class="card-text"> -> HTML file </p>
+    <p class="card-text"> With the "router-outlet" simply marks the place in our document where we want the Angular router to load the component of the currently selected route.</p>
+    <code>&#60;router-outlet>&#60;/router-outlet></code>
   </div>
 </div>
