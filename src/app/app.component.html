@@ -112,9 +112,9 @@
           <p class="card-text"> <code>constructor(private router: Router) &#123; } </code></p>
           <p class="card-text"> and then in the method it is possible to add the navigate() method that function is to route the user to the new page:<br>
             <code> onLoadServers() &#123; <br>
-            // complex calculation<br>
-            <b>this.router.navigate(['/servers']);</b><br>
-            }<br></code></p>
+              // complex calculation<br>
+              <b>this.router.navigate(['/servers']);</b><br>
+              }<br></code></p>
         </div>
       </div>
 
@@ -131,9 +131,9 @@
 
           <p class="card-text"> The navigate method needs an extra parameter that can identify the relative path where attach the new path:<br>
             <code>routerLink="/servers" <br>
-          onReload() &#123;<br>
-          this.router.navigate(['servers'], &#123;relativeTo: this.route});<br>
-          }</code>
+              onReload() &#123;<br>
+              this.router.navigate(['servers'], &#123;relativeTo: this.route});<br>
+              }</code>
           </p>
         </div>
       </div>
@@ -160,8 +160,8 @@
             <br>
             ngOnInit()  &#123;<br>
             this.user =  &#123;<br><b>
-            id: this.route.snapshot.params['id'],<br>
-            name: this.route.snapshot.params['name'],<br></b>
+              id: this.route.snapshot.params['id'],<br>
+              name: this.route.snapshot.params['name'],<br></b>
             };<br>
             }</code></p>
         </div>
@@ -174,7 +174,20 @@
           <h5 class="card-title">Lesson 133 -> Fetching Route Parameters Reactively - Observables Object</h5>
           <p class="card-text"> - </p>
           <p class="card-text">If we need to load another link from the same route using the same components -> <code>&#60;a [routerLink]="['/users', 10, 'Anna']">Load Anna&#60;/a> </code> we will see the page never load the new values. That because the ngOnInit will be execute just once.</p>
-          <p class="card-text">We can use our route object and instead of using the snapshot here, there is some params property on this route object itself. <b>Observables</b> are a feature added by some other third-party package, not by Angular but heavily used by Angular which allow you to easily work with asynchronous tasks and this is an asynchronous task because the parameters of your currently loaded route might change at some point in the future if the user clicks this link but you don't know when, you didn't know if and you don't know how long it will take:.<code>routerLink="/servers" </code></p>
+          <p class="card-text">We can use our route object and instead of using the snapshot here, there is some params property on this route object itself. <b>Observables</b> are a feature added by some other third-party package, not by Angular but heavily used by Angular which allow you to easily work with asynchronous tasks and this is an asynchronous task because the parameters of your currently loaded route might change at some point in the future if the user clicks this link but you don't know when, you didn't know if and you don't know how long it will take:.<br>
+            <code>ngOnInit() &#123;<br>
+              this.user = &#123;<br>
+              id: this.route.snapshot.params['id'],<br>
+              name: this.route.snapshot.params['name'],<br>
+              };<br>
+              <b>this.route.params<br>
+              .subscribe(<br>
+              (params: Params) => &#123;<br>
+              this.user.id = params['id'];<br>
+              this.user.name = params['name'];<br>
+              });</b><br>
+              }</code><br>
+            So an observable is an easy way to subscribe to some event which might happen in the future, to then execute some code when it happens without having to wait for it now and that is what params is. It is such an observable and as the name implies, we can observe it and we do so by subscribing to it.</p>
         </div>
       </div>
 
