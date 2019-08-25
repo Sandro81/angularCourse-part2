@@ -258,8 +258,14 @@ That will help to react at the changes parameters.
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 138 -> Setting up Child (Nested) Routes</h5>
-          <p class="card-text"> With Child Nested Routes, it is possible to group all route with the same path at once: </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> With Child Nested Routes, it is possible to group all route with the same path at once, for example: </p>
+          <p class="card-text"><code>  &#123; path: 'servers', component: ServersComponent },<br>
+            &#123; path: 'servers/:id', component: ServerComponent },<br>
+            &#123; path: 'servers/:id/edit', component: EditServerComponent },<br></code></p>
+          <p class="card-text">Will Become: <br>
+            <code>routerLink="/servers" </code></p>
+
+          <p class="card-text">Since do that, we need to change each app-componet declared into the html files, and change with the -><code>&#60;router-outlet>&#60;/router-outlet> </code></p>
         </div>
       </div>
 
