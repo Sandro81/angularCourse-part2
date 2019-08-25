@@ -301,6 +301,46 @@ That will help to react at the changes parameters.
       </div>
 
 
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 143 -> Outsourcing the Route Configuration</h5>
+          <p class="card-text"> To contain the list of route content in the app.modules, we can create a new file <b>app-routing.module.ts</b> </p>
+          <p class="card-text">It's important to add the NgModule like belowe: <br>
+            <br><code>@NgModule(&#123; <br>
+            imports: [RouterModule.forRoot(appRoutes)],<br>
+            exports: [RouterModule]<br>
+            })</code></p>
+          <p class="card-text">It is important to add the AppRougingModule into the imports parameters on the app.module.ts: <br>
+            <code>imports: [<br>
+            BrowserModule,<br>
+           <b>AppRoutingModule,</b> <br>
+            FormsModule<br>
+            ],</code></p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 144 -> An Introduction to Guards</h5>
+          <p class="card-text"> So basically functionality, logic, code which is executed before a route is loaded or once you want to leave a route. Let's start with a simple use case, let's say you only want to give access to your server component, your single server component or the edit server component if a user is logged in. Now we're not going to add a full login functionality, for this we will later have the authentication section in this course but we will fake it for now. Still, we want to check this before any of our subroutes here, so servers/3, servers/1 and then also the added routes are accessed. </p>
+          <p class="card-text"> So therefore, we want to use a feature built into the Angular router, running some code before the component is loaded, we will use the CanActivateGuard and we will do so in the next lecture.</p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 145 -> Protecting Routes with canActivate</h5>
+          <p class="card-text"> -> Create a service dile <b>auth-guard.service.ts</b> </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
+
+
+
+
 
       <br>
       <div class="card">
@@ -310,7 +350,6 @@ That will help to react at the changes parameters.
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
