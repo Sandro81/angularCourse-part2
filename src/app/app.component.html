@@ -238,10 +238,23 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 136 -> Retrieving Query Parameters and Fragments</h5>
-          <p class="card-text"> - </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> There two way to retrieving information from the URl parameters and fragments </p>
+          <p class="card-text"> <code>this.route.snapshot.queryParams; <br>
+            this.route.snapshot.fragment
+          </code> Using the snapshot, activating it by adding the service ActivatedRoute in the constructor: <br>
+          <code> constructor(private serversService: ServersService,
+            <b>private route: ActivatedRoute</b>) &#123; }</code> <br>
+          this way probably will have the problem about the ngOnInit, that will execute the code just once</p>
+
+          <p class="card-text">For that reason we can use the Observable method using the:<br><code>      this.route.queryParams.subscribe();<br>
+            this.route.fragment.subscribe();<br></code>
+That will help to react at the changes parameters.
+          </p>
         </div>
       </div>
+
+
+
 
       <br>
       <div class="card">
