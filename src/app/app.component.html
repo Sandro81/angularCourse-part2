@@ -171,6 +171,17 @@
       <br>
       <div class="card">
         <div class="card-body">
+          <h5 class="card-title">Lesson 133 -> Fetching Route Parameters Reactively - Observables Object</h5>
+          <p class="card-text"> - </p>
+          <p class="card-text">If we need to load another link from the same route using the same components -> <code>&#60;a [routerLink]="['/users', 10, 'Anna']">Load Anna&#60;/a> </code> we will see the page never load the new values. That because the ngOnInit will be execute just once.</p>
+          <p class="card-text">We can use our route object and instead of using the snapshot here, there is some params property on this route object itself. <b>Observables</b> are a feature added by some other third-party package, not by Angular but heavily used by Angular which allow you to easily work with asynchronous tasks and this is an asynchronous task because the parameters of your currently loaded route might change at some point in the future if the user clicks this link but you don't know when, you didn't know if and you don't know how long it will take:.<code>routerLink="/servers" </code></p>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
           <h5 class="card-title">Lesson xxx -> </h5>
           <p class="card-text"> - </p>
           <p class="card-text"> <code>routerLink="/servers" </code></p>
