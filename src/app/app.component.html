@@ -208,8 +208,28 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 135 -> Passing Query Parameters and Fragments</h5>
-          <p class="card-text"> - </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> To be able to build a link like -> http://localhost:4200/servers/1/edit?allowEdit=1#loading </p>
+          <p class="card-text">We have to use some hook: <br>
+            <code>&#60;a
+            [routerLink]="['/servers', 5, 'edit']"<br>
+            [queryParams]="&#123;allowEdit: '1'}"<br>
+            freagment="loading"<br>
+            href="#"<br>
+            class="list-group-item"<br>
+            *ngFor="let server of servers"><br>
+            &#123; &#123; server.name }}<br>
+            &#60;/a> </code></p>
+          <p class="card-text"> <code>[routerLink]="['/servers', 5, 'edit']"</code> for build our url</p>
+          <p class="card-text"> <code>[queryParams]="&#123;allowEdit: '1'}"</code> Now query params and that's important is not a new directive, it's just another bindable property of the routerLink directive. Into the JS object we can pass the parameters.</p>
+          <p class="card-text"> <code>fragment="loading"</code> Is for edit the # component</p>
+          <p class="card-text">Suppose we have a button <code>&#60;button (click)="onLoadServer(1)" class="btn btn-primary">Load Servers 1&#60;/button></code><br>
+          we can call a method by clicking, this method will structore like this: <br>
+          <code>onLoadServer(id: number) &#123;<br>
+            // complex calculation<br>
+            this.router.navigate(['/servers', id, 'edit'],<br>
+            &#123;queryParams: &#123;allowEdit: '1'}, fragment: 'loading'});<br>
+            }</code>
+          </p>
         </div>
       </div>
 
