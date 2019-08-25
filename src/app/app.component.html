@@ -337,6 +337,8 @@ That will help to react at the changes parameters.
           <p class="card-text"> -> Create a fake service file <b>auth.service.ts</b> </p>
           <p class="card-text">Into the auth-guard.service.ts we will implement the <a href="https://angular.io/api/router/CanActivate" target="_blank">CanActivate</a> interface which force to have the  <code>canActivate()</code> method. For more information check the link and how it was coded during the lesson.</p>
           <p class="card-text">It's important to add the <b>canActivate: [AuthGuard]</b> to the path -> <code>&#123; path: 'servers', <b>canActivate: [AuthGuard]</b>, component: ServersComponent, children:</code>. That will be active also for the children path.</p>
+          <p class="card-text">It's also important to provide the services to the app.module.ts file -> <code> providers: [ServersService, AuthService, AuthGuard],</code></p>
+
         </div>
       </div>
 
@@ -348,6 +350,9 @@ That will help to react at the changes parameters.
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
+
+
+
 
       <br>
       <div class="card">
