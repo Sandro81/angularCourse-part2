@@ -38,7 +38,7 @@
     </div>
   </div>
 </div>
-
+<br>
 
 <div class="container">
   <div class="row">
@@ -188,6 +188,28 @@
               });</b><br>
               }</code><br>
             So an observable is an easy way to subscribe to some event which might happen in the future, to then execute some code when it happens without having to wait for it now and that is what params is. It is such an observable and as the name implies, we can observe it and we do so by subscribing to it.</p>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 134 -> An Important Note about Route Observables</h5>
+          <p class="card-text"> Is best practise to destroy the subscription using the onDestroy lifecycle hook. </p>
+          <p class="card-text"> <code>  ngOnDestroy(): void &#123;<br>
+            this.paramsSubscription.unsubscribe();<br>
+            }</code></p>
+          <p class="card-text"> For more details look into the user.component.ts </p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 135 -> Passing Query Parameters and Fragments</h5>
+          <p class="card-text"> - </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
 
