@@ -279,7 +279,9 @@ That will help to react at the changes parameters.
         <div class="card-body">
           <h5 class="card-title">Lesson 140 -> Configuring the Handling of Query Parameters</h5>
           <p class="card-text"> So we want to preserve them because we already set this information at the point of time we visit a single server, now we want to preserve this information once we navigate one step further to the edit server component. To preserve that information, we get a simple way of doing so. In the server component where we navigate, we can pass another property or add another property to this Javascript object we use to configure our navigation and here, we get the query params handling property. </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text">To handle the parameters, we just add the <a href="https://angular.io/api/router/NavigationExtras" target="_blank"> queryParamsHandling</a> followed with a string: <br><code>onReload() &#123;<br>
+            this.router.navigate(['servers'], &#123;relativeTo: this.route, queryParamsHandling: 'preserve'});<br>
+            }</code></p>
         </div>
       </div>
 
