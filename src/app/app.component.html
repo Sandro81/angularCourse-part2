@@ -154,6 +154,16 @@
           <h5 class="card-title">Lesson 132 -> Fetching Route Parameters</h5>
           <p class="card-text"> <code>  &#123; path: 'users/:id', component: UsersComponent }, </code> with this code we know that we will load the user component, and we know that there will be some data in the URL for us.</p>
           <p class="card-text"> How can we get access to it? It is in the TypeScript file where we can get access and there, we need to inject something we already injected before, the active route.</p>
+          <p class="card-text"> <code>  user: &#123; id: number, name: string};<br>
+            <br>
+            constructor(private route: ActivatedRoute)  &#123; }<br>
+            <br>
+            ngOnInit()  &#123;<br>
+            this.user =  &#123;<br><b>
+            id: this.route.snapshot.params['id'],<br>
+            name: this.route.snapshot.params['name'],<br></b>
+            };<br>
+            }</code></p>
         </div>
       </div>
 
