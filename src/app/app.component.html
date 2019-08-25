@@ -141,15 +141,22 @@
       <br>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Lesson 131 -> Passing Parameters to Routes</h5>
+          <h5 class="card-title">Lesson 131 -> Passing Parameters to Routes -> users/:id</h5>
           <p class="card-text"> We do this by adding a colon and then any name you like ( :id ), like for example ID, you will later be able to retrieve the parameter inside of the loaded component by that name you specify here, so by ID in this case and the colon simply tells Angular that this is a dynamic part of the path. </p>
           <p class="card-text"> <code>  &#123; path: 'users/:id', component: UsersComponent }, </code> Now with this in place, we are able to load a component, the user component with this dynamic piece sent to it.</p>
-          <p class="card-text"> <code>  &#123; path: 'users/:id', component: UsersComponent }, </code></p>
-
-
 
         </div>
       </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 132 -> Fetching Route Parameters</h5>
+          <p class="card-text"> <code>  &#123; path: 'users/:id', component: UsersComponent }, </code> with this code we know that we will load the user component, and we know that there will be some data in the URL for us.</p>
+          <p class="card-text"> How can we get access to it? It is in the TypeScript file where we can get access and there, we need to inject something we already injected before, the active route.</p>
+        </div>
+      </div>
+
 
       <br>
       <div class="card">
