@@ -289,8 +289,14 @@ That will help to react at the changes parameters.
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 141 -> Redirecting and Wildcard Routes</h5>
-          <p class="card-text"> - </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> For url that are not present in the server, we can redirect the user using the redirectTo that redirect the user in the path declared: </p>
+          <p class="card-text"> <code>
+            &#123; path: 'not-found', component: PageNotFoundComponent },<br>
+            &#123; path: '**', redirectTo: '/not-found', pathMatch: 'full' },<br>
+          </code></p>
+          <p class="card-text">The two ** means whatever the user types -> <code>path: '**'</code> it's important that path is the last one.</p>
+          <p class="card-text">The pathMatch: 'full'  since the default matching strategy is "prefix" , Angular checks if the path you entered in the URL does start with the path specified in the route. Of course every path starts with ''  (Important: That's no whitespace, it's simply "nothing").To fix this behavior, you need to change the matching strategy to "full" -> <code>pathMatch: 'full'</code></p>
+
         </div>
       </div>
 
