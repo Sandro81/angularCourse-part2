@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth-guard.service';
 import {CanDeactivateGuardService} from './section11/l124/servers/edit-server/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -28,6 +29,7 @@ import {CanDeactivateGuardService} from './section11/l124/servers/edit-server/ca
     UsersComponent,
     UserComponent,
     PageNotFoundComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
