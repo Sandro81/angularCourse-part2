@@ -12,6 +12,8 @@ import { UserComponent } from './section11/l124/users/user/user.component';
 import {FormsModule} from '@angular/forms';
 import {ServersService} from './section11/l124/servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth-guard.service';
 
 
 
@@ -31,7 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

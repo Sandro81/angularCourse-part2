@@ -333,14 +333,21 @@ That will help to react at the changes parameters.
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 145 -> Protecting Routes with canActivate</h5>
-          <p class="card-text"> -> Create a service dile <b>auth-guard.service.ts</b> </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> -> Create a service file <b>auth-guard.service.ts</b> </p>
+          <p class="card-text"> -> Create a fake service file <b>auth.service.ts</b> </p>
+          <p class="card-text">Into the auth-guard.service.ts we will implement the <a href="https://angular.io/api/router/CanActivate" target="_blank">CanActivate</a> interface which force to have the  <code>canActivate()</code> method. For more information check the link and how it was coded during the lesson.</p>
+          <p class="card-text">It's important to add the <b>canActivate: [AuthGuard]</b> to the path -> <code>&#123; path: 'servers', <b>canActivate: [AuthGuard]</b>, component: ServersComponent, children:</code>. That will be active also for the children path.</p>
         </div>
       </div>
 
-
-
-
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 146 -> Protecting Child (Nested) Routes with canActivateChild</h5>
+          <p class="card-text"> - </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
       <br>
       <div class="card">
@@ -350,6 +357,9 @@ That will help to react at the changes parameters.
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
+
+
+
     </div>
   </div>
 </div>
